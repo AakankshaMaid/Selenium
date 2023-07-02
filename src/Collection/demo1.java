@@ -1,4 +1,4 @@
-package Collection_Framework;
+package Collection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
