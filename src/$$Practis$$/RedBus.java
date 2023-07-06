@@ -30,53 +30,41 @@ public class RedBus {
 		FileInputStream file=new FileInputStream("C:\\Velocity class\\selenium\\New Microsoft Excel Worksheet.xlsx");
 		String value=WorkbookFactory.create(file).getSheet("Sheet6").getRow(0).getCell(0).getStringCellValue();
 		//froms
-		driver.findElement(By.xpath("//input[@data-message='Please enter a source city']")).sendKeys(value);
+		driver.findElement(By.xpath("(//input[@class='sc-bxivhb hrsLPT'])[1]")).sendKeys(value);
 		Thread.sleep(3000);
-		//handleing auto suggetion
-		List<WebElement> alloption=driver.findElements(By.xpath("//ul[@class='autoFill homeSearch']/li"));
-	    String	exptresult="Swargate, Pune";
-	    for(WebElement s1:alloption)
-	    {
-	    	String autualresult=s1.getText();
-	    	if(exptresult.equals(autualresult))
-	    	{
-	    		s1.click();
-	    		break;
-	    	}
-	    }
 		
 		//excel2
 		FileInputStream file1=new FileInputStream("C:\\Velocity class\\selenium\\New Microsoft Excel Worksheet.xlsx");
 		String value1=WorkbookFactory.create(file1).getSheet("Sheet6").getRow(1).getCell(0).getStringCellValue();
 		
 		//to
-		driver.findElement(By.xpath("//input[@data-message='Please enter a destination city']")).sendKeys(value1);
+		driver.findElement(By.xpath("(//input[@class='sc-bxivhb hrsLPT'])[2]")).sendKeys(value1);
 		Thread.sleep(3000);
-		//handleing auto suggetion
-		List<WebElement> alloption1=driver.findElements(By.xpath("//ul[@class='autoFill homeSearch']/li"));
-	    String	exptresult1="Thane West, Mumbai";
-	    for(WebElement s1:alloption1)
-	    {
-	    	String autualresult1=s1.getText();
-	    	if(exptresult1.equals(autualresult1))
-	    	{
-	    		s1.click();
-	    		break;
-	    	}
-	    }
+
 		//date
-		driver.findElement(By.xpath("//td[text()='30']")).click();
-		//search
-		driver.findElement(By.xpath("//button[@id='search_btn']")).click();
+		driver.findElement(By.xpath("//text[@class='dateText']")).click();
+		Thread.sleep(2000);
+		while(!driver.findElement(By.xpath("(//div[@class='DayNavigator__IconBlock-qj8jdz-2 iZpveD'])[2]")).getText().contains("Aug"))
+		{
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("(//div[@class='DayNavigator__IconBlock-qj8jdz-2 iZpveD'])[3]")).click();
+			Thread.sleep(2000);
+		}
 		
-//		Set<String> ids=driver.getWindowHandles();
-//		List<String> childids=new ArrayList(ids);
-//		driver.switchTo().window(childids.get(1));
-		Thread.sleep(4000);
-		//cancel popup
-		driver.findElement(By.xpath("//i[@class='icon-close coach-close']")).click();
-		//cancel 2nd popup
-		driver.findElement(By.xpath("//i[@class='icon-close coach-close']")).click();
+		Thread.sleep(2000);
+		List<WebElement> ele=driver.findElements(By.xpath("//span/div"));
+		for(WebElement w:ele)
+		{
+			if(w.getText().contains("10"))
+			{
+				w.click();
+				break;
+			}
+			
+		}
+		Thread.sleep(2000);
+			
+				driver.quit();
 		
 
 		
