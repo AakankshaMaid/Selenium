@@ -57,5 +57,6 @@
 	<classpathentry kind="lib" path="C:/Velocity class/velocity SELENIUM tool/poi-bin-5.2.3-20220909 (1)/xmlbeans-5.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Velocity class/velocity SELENIUM tool/poi-bin-5.2.3-20220909 (1)/xmlgraphics-commons-2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Velocity class/velocity SELENIUM tool/poi-bin-5.2.3-20220909 (1)/xmlsec-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/V C/velocity SELENIUM tool/selenium-server-4.8.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

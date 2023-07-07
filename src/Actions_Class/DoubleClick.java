@@ -16,7 +16,7 @@ public class DoubleClick {
 		
 		Actions act=new Actions(driver);
 		act.doubleClick(ele).perform();
-		
+		System.out.println("Aakanksha");
 		
 		
 		
